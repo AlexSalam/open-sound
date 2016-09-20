@@ -6,6 +6,7 @@ class Player {
 
     this.$source = $source;
     this.createPlayerWindow($elem);
+    this.processOptions($options);
 
   }
 
@@ -45,6 +46,79 @@ class Player {
       $innerDiv.appendChild($nextBtn);
 
       $elem.appendChild($innerDiv);
+
+    }
+
+  }
+
+  initVisualiser() {
+
+
+
+  }
+
+  processOptions($options) {
+
+    if (typeof $options !== "object") {
+      console.log("Invalid options object!");
+    } else {
+
+      // Process Display Options
+      if (typeof $options.display === "object") {
+        var displayOptions = $options.display;
+        if (displayOptions.hasOwnProperty('visualiser')) {
+          if (displayOptions.visualiser == true) {
+            this.visualiser = true;
+            this.initVisualiser();
+          }
+        }
+      }
+
+      // Process Style options
+      /*
+      * Adds custom classes to objects on the player for custom styling
+      * Can customise:
+      * play, bar, handle?, back, next and container
+      */
+      if (typeof $options.style === "object") {
+        var styleOptions = $options.style;
+        if (styleOptions.hasOwnProperty('play')) {
+          if (typeof styleOptions.play == "string") {
+            document.getElementById('play-pause-btn').addClass(styleOptions.play);
+            document.getElementById('play-pause-btn').id = "";
+          }
+        }
+        if (styleOptions.hasOwnProperty('bar')) {
+          if (typeof styleOptions.bar == "string") {
+            document.getElementById('track-bar').addClass(styleOptions.bar);
+            document.getElementById('track-bar').id = "";
+          }
+        }
+        if (styleOptions.hasOwnProperty('handle')) {
+          if (typeof styleOptions.handle == "string") {
+            document.getElementById('play-pause-btn').addClass(styleOptions.play);
+            document.getElementById('play-pause-btn').id = "";
+          }
+        }
+        if (styleOptions.hasOwnProperty('play')) {
+          if (typeof styleOptions.play == "string") {
+            document.getElementById('play-pause-btn').addClass(styleOptions.play);
+            document.getElementById('play-pause-btn').id = "";
+          }
+        }
+        if (styleOptions.hasOwnProperty('play')) {
+          if (typeof styleOptions.play == "string") {
+            document.getElementById('play-pause-btn').addClass(styleOptions.play);
+            document.getElementById('play-pause-btn').id = "";
+          }
+        }
+        if (styleOptions.hasOwnProperty('play')) {
+          if (typeof styleOptions.play == "string") {
+            document.getElementById('play-pause-btn').addClass(styleOptions.play);
+            document.getElementById('play-pause-btn').id = "";
+          }
+        }
+      }
 
     }
 
