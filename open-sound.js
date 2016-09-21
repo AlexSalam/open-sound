@@ -33,6 +33,10 @@ class Player {
       $pullBar.id = "track-bar";
       $innerDiv.appendChild($pullBar);
 
+      var $barHandle = document.createElement('button');
+      $barHandle.id = "handle";
+      $innerDiv.appendChild($barHandle);
+
       var $backBtn = document.createElement('button');
       $backBtn.id = "back-btn";
       $innerDiv.appendChild($backBtn);
@@ -96,26 +100,26 @@ class Player {
         }
         if (styleOptions.hasOwnProperty('handle')) {
           if (typeof styleOptions.handle == "string") {
-            document.getElementById('play-pause-btn').addClass(styleOptions.play);
-            document.getElementById('play-pause-btn').id = "";
+            document.getElementById('handle').addClass(styleOptions.handle);
+            document.getElementById('handle').id = "";
           }
         }
-        if (styleOptions.hasOwnProperty('play')) {
-          if (typeof styleOptions.play == "string") {
-            document.getElementById('play-pause-btn').addClass(styleOptions.play);
-            document.getElementById('play-pause-btn').id = "";
+        if (styleOptions.hasOwnProperty('back')) {
+          if (typeof styleOptions.back == "string") {
+            document.getElementById('back-btn').addClass(styleOptions.back);
+            document.getElementById('back-btn').id = "";
           }
         }
-        if (styleOptions.hasOwnProperty('play')) {
-          if (typeof styleOptions.play == "string") {
-            document.getElementById('play-pause-btn').addClass(styleOptions.play);
-            document.getElementById('play-pause-btn').id = "";
+        if (styleOptions.hasOwnProperty('next')) {
+          if (typeof styleOptions.next == "string") {
+            document.getElementById('next-btn').addClass(styleOptions.next);
+            document.getElementById('next-btn').id = "";
           }
         }
-        if (styleOptions.hasOwnProperty('play')) {
-          if (typeof styleOptions.play == "string") {
-            document.getElementById('play-pause-btn').addClass(styleOptions.play);
-            document.getElementById('play-pause-btn').id = "";
+        if (styleOptions.hasOwnProperty('container')) {
+          if (typeof styleOptions.container == "string") {
+            document.getElementById('player-container').addClass(styleOptions.container);
+            document.getElementById('player-container').id = "";
           }
         }
       }
